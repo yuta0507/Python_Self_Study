@@ -51,10 +51,28 @@ class Sort(object):
 
         return nums
 
+    def comb(self, nums: List[int]) -> List[int]:
+        length = len(nums)
+        gap = length
+
+        while gap != 1 or swapped:
+            swapped = False
+
+            if gap > 1:
+                gap = int(gap / 1.3)
+
+            for i in range(length - gap):
+                if nums[i] > nums[i + gap]:
+                    nums[i], nums[i + gap] = nums[i + gap], nums[i]
+                    swapped = True
+
+        return nums
 
 
 if __name__ == '__main__':
     sort = Sort()
 
     nums = [8, 5, 7, 3, 4, 6]
-    print(sort.cocktail(nums))
+    print('Bubble  : ', sort.bubble(nums))
+    print('Cocktail: ', sort.cocktail(nums))
+    print('Comb    : ', sort.comb(nums))
