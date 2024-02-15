@@ -75,4 +75,4 @@ if __name__ == '__main__':
     nums = [8, 5, 7, 3, 4, 6]
     print('Bubble  : ', sort.bubble(nums))
     print('Cocktail: ', sort.cocktail(nums))
-    print('Comb    : ', sort.comb(nums))
+    print('Comb    sort: ', sort.comb(nums))
